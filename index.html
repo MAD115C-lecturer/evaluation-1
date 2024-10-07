@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MAD11C Evaluation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <img src="images/TUT_logo.png" alt="Logo" class="logo" />
+        <h1>MAD11C Evaluation 1</h1>
+        <div class="timer-container">
+          <div class="circle-timer">
+            <svg class="progress-ring" width="200" height="200">
+              <circle
+                class="progress-ring__background"
+                stroke="#ddd"
+                stroke-width="10"
+                fill="transparent"
+                r="90"
+                cx="100"
+                cy="100"
+              />
+              <circle
+                class="progress-ring__circle"
+                stroke="#E6B013"
+                stroke-width="10"
+                fill="transparent"
+                r="90"
+                cx="100"
+                cy="100"
+              />
+            </svg>
+            <p id="countdown" class="timer-text">00:00:00</p>
+          </div>
+        </div>
+        <button id="startButton" disabled>
+          Start Test at 9 AM, 11 Oct 2024
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

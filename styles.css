@@ -1,0 +1,86 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 150px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #0f0f0f;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.timer-container {
+    margin-bottom: 20px;
+}
+
+.circle-timer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.progress-ring__background {
+    /* Grey background circle */
+}
+
+.progress-ring__circle {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#startButton {
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #013883;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.5; /* Make button look inactive */
+}
+
+#startButton:enabled {
+    opacity: 1; /* Make button look active when enabled */
+}
+
+#activationMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
