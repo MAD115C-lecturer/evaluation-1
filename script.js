@@ -6,11 +6,12 @@ const circumference = 2 * Math.PI * radius;
 progressCircle.style.strokeDasharray = `${circumference}`;
 progressCircle.style.strokeDashoffset = circumference;
 
-// Date and time setup: Set the target date to current time to activate immediately
-const targetDate = new Date().getTime(); // Current time
+// Date and time setup: Set the target date to 09:15 today
+const now = new Date();
+const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 15, 0).getTime(); // Set to 09:15 today
 const totalDuration = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
 
-// Start the countdown automatically as the target time is now
+// Start the countdown automatically when the time reaches the target date
 function checkTime() {
     const currentTime = new Date().getTime();
 
@@ -18,6 +19,10 @@ function checkTime() {
         startCountdown();
         startButton.disabled = false; // Enable the button when countdown starts
         startButton.textContent = 'Start'; // Change button text to "Start"
+    } else {
+        const timeLeft = targetDate - currentTime;
+        const targetDateTime = new Date(targetDate).toLocaleTimeString(); // Format time for display
+        startButton.textContent = `Test starts at ${targetDateTime}`; // Update button text with the start time
     }
 }
 
@@ -58,8 +63,8 @@ function setProgress(percent) {
     progressCircle.style.strokeDashoffset = offset;
 }
 
-// Start the countdown immediately since the time is now
-checkTime();
+// Check every second to see if we need to start the countdown
+setInterval(checkTime, 1000);
 
 // Button functionality
 startButton.addEventListener('click', function () {
